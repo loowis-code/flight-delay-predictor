@@ -5,9 +5,16 @@ import RiskScore from '~/components/RiskScore/RiskScore'
 import FactorBreakdown from '~/components/FactorBreakdown/FactorBreakdown'
 import FlightDetails from '~/components/FlightDetails/FlightDetails'
 import { getPrediction } from '~/lib/server/prediction'
+import { validateFlightNumber, validateDate } from '~/helpers/validation'
 
 const fetchPrediction = createServerFn({ method: 'GET' })
-    .inputValidator((input: { flightNumber: string; date: string }) => input)
+    .inputValidator((input: { flightNumber: string; date: string }) => {
+        const flight = validateFlightNumber(input.flightNumber)
+        if (!flight.valid) throw new Error(flight.error)
+        const date = validateDate(input.date)
+        if (!date.valid) throw new Error(date.error)
+        return { flightNumber: flight.normalized, date: date.date }
+    })
     .handler(async ({ data }) => {
         return getPrediction(data.flightNumber, data.date)
     })
