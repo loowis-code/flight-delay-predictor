@@ -1,0 +1,45 @@
+.layout {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    padding: 1rem 2rem;
+    border-bottom: 3px solid var(--border);
+    background: var(--bg-card);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.logoAccent {
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: 0.875rem;
+    margin-left: 0.5rem;
+}
+
+.main {
+    flex: 1;
+    padding: 2rem;
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.footer {
+    padding: 1rem 2rem;
+    border-top: 3px solid var(--border);
+    background: var(--bg-card);
+    text-align: center;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}

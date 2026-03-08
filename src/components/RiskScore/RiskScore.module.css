@@ -1,0 +1,81 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.riskCircle {
+    width: 160px;
+    height: 160px;
+    border: 4px solid var(--border);
+    box-shadow: 6px 6px 0px var(--shadow-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+}
+
+.score {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.outOf {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border: 2px solid var(--border);
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.badgeLow {
+    background: var(--color-mint);
+}
+
+.badgeMedium {
+    background: var(--color-peach);
+}
+
+.badgeHigh {
+    background: var(--color-rose);
+}
+
+.badgeVeryHigh {
+    background: var(--color-lavender);
+}
+
+.explainer {
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    text-align: center;
+    max-width: 280px;
+}
+
+.dataQuality {
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+    font-family: var(--font-mono);
+}
+
+.qualityGood {
+    color: #4a9;
+}
+
+.qualityLimited {
+    color: #b90;
+}
+
+.qualityInsufficient {
+    color: var(--color-rose);
+}
