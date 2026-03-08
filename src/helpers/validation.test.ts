@@ -82,7 +82,7 @@ describe('validateFlightNumber', () => {
 describe('validateDate', () => {
     beforeEach(() => {
         vi.useFakeTimers()
-        vi.setSystemTime(new Date('2025-06-15'))
+        vi.setSystemTime(new Date(Date.UTC(2025, 5, 15)))
     })
 
     afterEach(() => {
@@ -123,6 +123,17 @@ describe('validateDate', () => {
         const result = validateDate('not-a-date')
         expect(result.valid).toBe(false)
         expect(result.error).toBe('Invalid date')
+    })
+
+    it('rejects invalid calendar dates like Feb 30', () => {
+        const result = validateDate('2025-02-30')
+        expect(result.valid).toBe(false)
+        expect(result.error).toBe('Invalid date')
+    })
+
+    it('rejects non-YYYY-MM-DD formats', () => {
+        expect(validateDate('15/06/2025').valid).toBe(false)
+        expect(validateDate('June 15 2025').valid).toBe(false)
     })
 })
 
