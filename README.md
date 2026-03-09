@@ -2,7 +2,7 @@
 
 Predicts flight delay risk for European flights. Enter a flight number and date, get a composite risk score with a breakdown of contributing factors.
 
-**Live:** https://flight-delay-predictor.loowis-pictures.workers.dev
+**Live:** https://flight-delay-predictor.loowis.co.uk
 
 ## Stack
 
